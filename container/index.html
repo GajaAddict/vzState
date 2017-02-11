@@ -1,0 +1,34 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>Angular Performance Test</title>
+    <meta charset="utf-8" />
+</head>
+<body>
+
+    <div ng-controller="MainController">
+        <h1>{{header}}</h1>
+        <a ui-sref="newconnect">New Connect</a> | <a ui-sref ="accountsearch">Account Seearch</a>
+        <hr />
+        <div ui-view="mainView"></div>
+
+    </div>
+
+    <script>
+        function AddScriptsAndStyles() {
+
+            var requirebootstrapPath = "../scripts/libs/require/main.js";
+            var requireJSPath = "../scripts/libs/require/require.js";
+
+            scriptElem = document.createElement('script');
+            scriptElem.setAttribute('data-main', requirebootstrapPath);
+            scriptElem.setAttribute('src', requireJSPath);
+            document.head.appendChild(scriptElem);
+
+        }
+        AddScriptsAndStyles();
+    </script>
+
+
+</body>
+</html>
